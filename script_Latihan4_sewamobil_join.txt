@@ -1,0 +1,150 @@
+                                   
+                                   SELAMAT DATANG di CHANNEL Afeto Chanel
+
+
+Disini saya akan mencoba mentutorial tentang menggabungkan table database menggunakan perintah JOIN
+
+
+Pertama kita membuat sebuah database dengan nama 'sewamobil'
+
+
+
+
+
+dan membuat beberapa tabel diantaranya :
+
+
+
+
+
+TABEL MOBIL
+dengan field di dalamnya yaitu:
+
++------+-------+-----------+---------+----------+
+| kode | jenis | merk      | tarif   | no_pol   |
++------+-------+-----------+---------+----------+
+
+
+
+
+
+
+TABEL PELANGGAN
+dengan field di dalamnya yaitu :
+
++------+--------------+--------+------------------------+----------+----------+----------+
+| kode | nama         | kontak | alamat                 | kota     | kode_pos | telepon  |
++------+--------------+--------+------------------------+----------+----------+----------+
+
+
+
+
+
+
+TABEL SEWA 
+dengan field di dalamnya yaitu :
+
++--------------+----------------+--------------+------------+-----------+-----------+
+| no_ktur_sewa | kode_pelanggan | tggl_sewa    | kode_mobil | lama_sewa | uang_muka |
++--------------+----------------+--------------+------------+-----------+-----------+
+
+
+
+
+
+
+
+dan isi data-data pada setiap tabel kira-kira seperti berikut!
+tabel mobil:
++-------+-------+---------------+--------+----------+
+| kode  | jenis | merk          | tarif  | no_pol   |
++-------+-------+---------------+--------+----------+
+| MB001 | Sedan | Suzuki Lancer | 500000 | BA1234AA |
+| MB002 | Sedan | Honda Jaz     | 350000 | BA1235AB |
+| MB003 | Bus   | Hyno          | 100000 | BA1236AC |
+| MB004 | Bus   | Dyna          | 800000 | BA1237AD |
+| MB005 | Truck | Hyno          | 150000 | BA1238AF |
++-------+-------+---------------+--------+----------+
+
+
+
+tabel pelanggan:
++------+-------------------+----------+---------------------+-----------+----------+---------+
+| kode | nama              | kontak   | alamat              | kota      | kode_pos | telpon  |
++------+-------------------+----------+---------------------+-----------+----------+---------+
+| P001 | PT Rajawali Sakti | Junandi  | Jl.Majapahit        | Tangerang |    30245 | 1234567 |
+| P002 | PT Arjuna         | Hermawan | Jl.MH Tamrin        | Jakarta   |    30246 | 1234568 |
+| P003 | PT Bala Raja      | Hardyana | Jl.Tangkuban Perahu | Bandung   |    30247 | 1234569 |
++------+-------------------+----------+---------------------+-----------+----------+---------+
+
+
+
+tabel sewa:
++----------------+----------------+------------+------------+-----------+-----------+
+| no_faktur_sewa | kode_pelanggan | tggl_sewa  | kode_mobil | lama_sewa | uang_muka |
++----------------+----------------+------------+------------+-----------+-----------+
+| F001           | P001           | 2018-01-02 | MB001      | 2         | 220000    |
+| F001           | P001           | 2018-01-03 | MB003      | 2         | 200000    |
+| F003           | P002           | 2018-01-4  | MB002      | 1         | 150000    |
++----------------+----------------+------------+------------+-----------+-----------+
+
+
+
+
+oke kita langsung ke bagaimana cara melakukan join pada tabel-tabel yang sudah kita buat tadi
+
+
+
+
+
+
+
+
+
+1. lakukan join terhadap tabel mobil dan sewa hingga menampilkan data seperti berikut 
+
++-------+--------+---------------+----------------+------------+-----------+-----------+
+| kode  | jenis  | merk          | no_faktur_sewa | tgl_sewa   | lama_sewa | uang_muka |
++-------+--------+---------------+----------------+------------+-----------+-----------+
+| MB001 | Sedan  | Suzuki Lancer | F001           | 2018-01-02 | 2         | 220000    |
+| MB002 | Sedan  | Hyno          | F001           | 2018-01-03 | 2         | 200000    |
+| MB003 | Bus    | Honda Jaz     | F003           | 2018-01-4  | 1         | 150000    |
+| MB004 | Bus    | DYNA          | NULL           | NULL       | NULL      | NULL      |
+| MB005 | Truck  | HYNO          | NULL           | NULL       | NULL      | NULL      |
++- -----+--------+---------------+----------------+------------+-----------+-----------+
+
+
+2. lakukan join tabel sewa, pelanggan dan mobil sampai menampilkan data seperti berikut :
+
++----------------+--------------------+------------+-------+---------------+-----------+------------+
+| no_faktur_sewa | nama               | tgl_sewa   | jenis | merk          | lama_sewa | uang_muka  |
++----------------+--------------------+------------+-------+---------------+-----------+------------+
+| F001           | PT Rajawali Sakti  | 2008-01-02 | Sedan | Suzuki Lancer | 2         | 220000     |
+| F003           | PT Arjuna          | 2008-12-4  | Sedan | Honda Jaz     | 1         | 150000     |
+| F001           | PT Rajawali Sakti  | 2008-01-03 | Bus   | Hyno          | 2         | 200000     |
++----------------+--------------------+------------+-------+---------------+-----------+------------+
+
+
+
+
+
+3. lakukan join tabel pelanggan dan tabel sewa hingga menampilkan data seperti berikut :
+
++--------------------+-----------+----------------+--------------+------------+-----------+-----------+
+| nama               | kota      | no_faktur_sewa | tggl_sewa    | kode_mobil | lama_sewa | uang_muka |
++--------------------+-----------+----------------+--------------+------------+-----------+-----------+
+| PT Rajawali Sakti  | Tangerang | F001           | 2008-01-02   | M001       | 2         | 220000    |
+| PT Rajawali Sakti  | Tangerang | F001           | 2008-01-03   | M003       | 2         | 200000    |
+| PT Arjuna          | JAKARTA   | F003           | 2008-01-4    | M002       | 1         | 150000    |
+| PT Bala Raja       | bandung   | NULL           | NULL         | NULL       | NULL      | NULL      |
++--------------------+-----------+----------------+--------------+------------+-----------+-----------+
+
+
+
+
+
+DEMIKIAN TUTORIAL INI KURANG DAN LEBIHNYA HARAP DI MAKLUMI
+KRITIK DAN SARANYA TULIS DI KOLOM KOMENTAR 
+JANGAN LUPA SUBSCRIBE, LIKE AND SHARE 
+
+THANKS, Afeto Chanel

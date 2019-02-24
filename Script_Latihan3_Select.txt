@@ -1,0 +1,137 @@
+                            
+
+                            Selamat Datang Di Channel 
+
+                                Afeto Chanel
+
+
+
+
+
+             Kali ini saya akan mengenalkan tentang perintah-perintah SELECT
+
+
+
+
+             Disini saya sudah menyiapkan database dengan nama ' data ' dan
+             juga saya sudah menyertakan 2 tabel yang pertama tabel 'pegawai'
+             yang kedua tabel ' pet '
+
+
+
+
+
+             Dan saya juga sudah menginsert data-data dari kedua tabel tersebut
+
+
+
+
+             Pertama kita akan menampilkan data-data yang ada di tabel pegawai
+
+             1. Menampilkan data pegawai yang gajinya bukan 2.000.000 dan 1.250.000!  
+             Perintahnya adalah :
+
+             SELECT * FROM pegawai WHERE gaji<>'2000000' AND gaji<>'1250000';
+
+
+
+
+             2. Menampilkan data pegawai yang tunjangannya NULL
+
+             SELECT * FROM pegawai WHERE tunjangan='NULL';
+             
+
+
+
+
+             3. Menampilkan data pegawai yang tunjanganya tidak NULL!
+
+             SELECT * FROM pegawai WHERE tunjangan<>'NULL';  
+
+
+
+
+
+
+             4. Menampilkan jumlah baris pada tabel pegawai!
+
+             SELECT COUNT(id_pegawai) FROM pegawai;
+
+
+
+
+
+             5. Menampilkan jumlah total gaji di tabel pegawai!
+             SELECT SUM(gaji) AS jumlah FROM pegawai;
+
+
+
+
+
+
+
+             6. Menampilkan rata-rata gaji pegawai!
+             SELECT AVG(gaji) AS rerata FROM pegawai;
+
+
+
+
+
+
+
+
+             7. Menampilkan gaji terkecil!
+             SELECT MIN(gaji) AS terkecil FROM pegawai;
+
+
+
+
+
+
+
+             8. Menampilkan gaji terbesar!
+              SELECT Max(gaji) AS tebesar FROM pegawai;
+
+
+
+
+
+
+
+             Kemudian kita akan menampilkan data-data dari tabel peternak
+             
+
+             1. Menampilkan jumlah hewan yang dimiliki setiap owner
+             SELECT owner , COUNT(name) AS jumlah FROM peternak GROUP BY owner; 
+
+
+
+
+
+
+             2. Menampilkan jumlah hewan berdasarkan species
+             SELECT species, COUNT(name) AS jumlah FROM peternak GROUP BY species;
+
+
+
+
+
+
+             3. Menampilkan jumlah hewan berdasarkan jenis kelamin
+             SELECT sex, COUNT(name) AS jumlah FROM peternak GROUP BY sex;
+
+
+
+
+
+
+             4 Menampilkan jumlah hewan berdasarkan species dan jenis kelamin
+             SELECT species, sex, COUNT(name) AS jumlah FROM peternak GROUP BY species, sex;
+
+
+
+
+             5. Menampilkan jumlah hewan berdasarkan species (cat dan dog saja) dan sex 
+
+				SELECT species='cat', species='dog', sex, COUNT(name) AS jumlah FROM peternak GROUP BY species='cat', species='dog', sex;
+ 

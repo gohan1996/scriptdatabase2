@@ -1,0 +1,39 @@
+             SELAMAT DATANG di CHANNEL Afeto Chanel
+
+
+Disini saya akan mencoba mentutorial tentang manipulasi data DML (Data Manipulation Language
+
+
+Pertama kita membuat sebuah database dengan nama 'latihan2'
+
+
+
+
+
+dan membuat beberapa tabel :
+
+nama tabelnya  mahasiswa;
++----------+---------------+--------------+----------+----------+-----------+---------------+------------+------------+
+| nim      | nama          | alamat_jalan | kota     | kode_pos | no_hp     | jenis_kelamin | tggl_lahir | kode_dosen |
++----------+---------------+--------------+----------+----------+-----------+---------------+------------+------------+
+| 11223344 | ari santoso   | jl.kenari    | bekasi   |   334455 | 811223344 | laki-laki     | 1978-08-31 |      22334 |
+| 11223345 | ario talib    | jl.merpati   | cikarang |   334456 | 811223345 | laki-laki     | 1999-11-16 |      22335 |
+| 11223347 | lisa ayu      | jl.anggrek   | bekasi   |   334458 | 811223347 | perempuan     | 1996-01-02 |      22337 |
+| 11223348 | tiara wahidah | jl.mawar     | bekasi   |   334459 | 811223348 | perempuan     | 1980-02-05 |      22338 |
+| 11223349 | anton sinaga  | jl.kenanga   | cikarang |   334450 | 811223349 | laki-laki     | 1988-03-10 |      22339 |
++----------+---------------+--------------+----------+----------+-----------+---------------+------------+------------+
+
+Disini saya akan mencoba memanipulasi data dengan berbagai cara yaitu
+
+1. Mengubah data
+2. Menampilkan satu baris data
+3. Menghapus data
+4. Menampilkan data dengan operator
+5. Menampilkan 2 kolom
+6. Mengurutkan isi data tersebut
+
+DEMIKIAN TUTORIAL INI KURANG DAN LEBIHNYA HARAP DI MAKLUMI
+KRITIK DAN SARANYA TULIS DI KOLOM KOMENTAR 
+JANGAN LUPA SUBSCRIBE, LIKE AND SHARE 
+
+THANKS, Afeto Chanel

@@ -1,0 +1,26 @@
+
+             SELAMAT DATANG di CHANNEL Afeto Chanel
+
+
+Disini saya akan mencoba mentutorial tentang membuat sebuah database baru.
+
+
+Pertama kita membuat sebuah database dengan nama 'stt_ti_17'
+
+
+
+dengan nama tabel mahasiswa;
+
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| nim    | int(20)     | YES  |     | NULL    |       |
+| nama   | varchar(30) | YES  |     | NULL    |       |
+| alamat | text        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+DEMIKIAN TUTORIAL INI KURANG DAN LEBIHNYA HARAP DI MAKLUMI
+KRITIK DAN SARANYA TULIS DI KOLOM KOMENTAR 
+JANGAN LUPA SUBSCRIBE, LIKE AND SHARE 
+
+THANKS, Afeto Chanel
